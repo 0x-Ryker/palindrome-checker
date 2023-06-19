@@ -1,0 +1,15 @@
+Certainly! Let's break down the JavaScript code for the palindrome app step by step:
+
+1. First, we need to select the HTML elements we want to work with. In this case, we have an input field (`<input>`) where the user enters a word, a paragraph (`<p>`) with an empty `id` attribute to display the result, and a button (`<button>`) to initiate the palindrome check. We use `document.getElementById()` to get references to these elements and store them in variables for later use.
+
+2. Next, we add an event listener to the button using `btn.addEventListener("click", () => { ... })`. An event listener is like a watcher that waits for a specific event to occur. In this case, we want to execute some code when the button is clicked. The code inside the curly braces `{ ... }` is the function that gets executed when the event occurs.
+
+3. Inside the event listener function, we get the value entered in the input field (`inputText.value`) and store it in a variable called `word`. This allows us to access the word that the user entered.
+
+4. To check if the word is a palindrome, we need to clean it up a bit. We convert the word to lowercase using `.toLowerCase()` so that we can compare it without considering case. Then, we remove any whitespace from the word using `.replace(/\s/g, "")`. This regular expression (`/\s/g`) matches all whitespace characters and the `g` flag ensures that all occurrences are replaced. The cleaned word is stored in a variable called `cleanWord`.
+
+5. To check if the word is a palindrome, we need to reverse it. We do this by splitting the `cleanWord` into an array of individual characters using `.split("")`, reversing the order of the characters using `.reverse()`, and then joining them back together into a string using `.join("")`. The reversed word is stored in a variable called `reversedWord`.
+
+6. Finally, we compare the `cleanWord` with the `reversedWord` using an `if` statement. If the two words are the same, it means the original word is a palindrome. We update the `textContent` property of the `result` paragraph to display a message confirming that it is a palindrome. Otherwise, we display a message indicating that it is not a palindrome.
+
+That's it! The JavaScript code essentially listens for a button click, retrieves the user-entered word, cleans it up, reverses it, and then compares the original word with the reversed word to determine if it's a palindrome or not.
